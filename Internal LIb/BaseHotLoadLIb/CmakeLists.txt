@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.30 FATAL_ERROR)
+
+SET(PROJECT_NAME BaseHLoadLib)                              #Project name
+
+
+#===============================Search_files_by_directories===============================
+    SET(_hdir "${CMAKE_CURRENT_SOURCE_DIR}/include/lib")            #root path to header directory
+    SET(_cdir "${CMAKE_CURRENT_SOURCE_DIR}/code")               #root path to the implementation resource files directory
+
+    file(GLOB_RECURSE HPP CONFIGURE_DEPENDS
+        ${_hdir}/*.h**                                          #All regular header files (.h .hpp .hxx)
+        ${_hdir}/*.inl                                          #All embedded or template header files  (.inl)
+    )
+
+    file(GLOB_RECURSE CPP CONFIGURE_DEPENDS
+        ${_cdir}/*.c**                                          #All regular resource files (.c .cpp .cxx)
+    )
+  include_directories(${_hdir})  
+    #===============================Search files by directories===============================
+    
+    
+    
+    
+#==============================Initializing_the project_and_linking_files================================
+add_library(${PROJECT_NAME} SHARED ${HPP} ${CPP})                                    #Adding an executable project
+target_include_directories(${PROJECT_NAME} PUBLIC ${_hdir})                               #Including the Project Header Root Directory in a Project
+#==============================Initializing_the project_and_linking_files================================
+

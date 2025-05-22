@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.30 FATAL_ERROR)
+
+add_library(Internal_LIbrary INTERFACE)                                            #Adding an interface to make it easier to connect external libraries to a project
+
+#=================================STB=================================
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/BaseHotLoadLIb")  
+target_link_libraries(Internal_LIbrary INTERFACE BaseHLoadLib)
+#=================================STB=================
