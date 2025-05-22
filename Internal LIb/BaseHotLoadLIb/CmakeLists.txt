@@ -4,7 +4,7 @@ SET(PROJECT_NAME BaseHLoadLib)                              #Project name
 
 
 #===============================Search_files_by_directories===============================
-    SET(_hdir "${CMAKE_CURRENT_SOURCE_DIR}/include/lib")            #root path to header directory
+    SET(_hdir "${CMAKE_CURRENT_SOURCE_DIR}/include/")            #root path to header directory
     SET(_cdir "${CMAKE_CURRENT_SOURCE_DIR}/code")               #root path to the implementation resource files directory
 
     file(GLOB_RECURSE HPP CONFIGURE_DEPENDS
