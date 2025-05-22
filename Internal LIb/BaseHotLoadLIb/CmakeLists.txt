@@ -23,6 +23,8 @@ SET(PROJECT_NAME BaseHLoadLib)                              #Project name
     
 #==============================Initializing_the project_and_linking_files================================
 add_library(${PROJECT_NAME} SHARED ${HPP} ${CPP})                                    #Adding an executable project
+# target_link_libraries(${PROJECT_NAME} PUBLIC External_LIbrary)
 target_include_directories(${PROJECT_NAME} PUBLIC ${_hdir})                               #Including the Project Header Root Directory in a Project
 #==============================Initializing_the project_and_linking_files================================
+
 
